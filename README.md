@@ -110,4 +110,5 @@ This project builds upon prior work in diffusion models, particularly extending 
 
 
 ## NOTE:
-- We need long training for both VAE and UNet to get good frame generation, at least 100+ epochs.
+
+We need long training for both VAE and UNet to get good frame generation, at least 100+ epochs.
