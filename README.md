@@ -1,4 +1,4 @@
-﻿# Diffusion-Mario
+# Diffusion-Mario
 
 You can also use your own VAE, but we found that it had very condusing outputs, with hard to recognise Mario figures, so we ended fine tunning it
 Link for VAE-Mario model : https://drive.google.com/drive/folders/1Y9Xhiz87YsbD9FcL4zObY04G2QvLDY1F?usp=drive_link
@@ -6,6 +6,10 @@ Link for VAE-Mario model : https://drive.google.com/drive/folders/1Y9Xhiz87YsbD9
 # Temporal Diffusion Model for Game-Like Video Generation
 
 A temporally-coherent diffusion model that generates high-quality video sequences with game-like visuals. This model implements advanced temporal modeling techniques to ensure smooth, consistent frame transitions and accurate action-conditioned generation.
+
+## Data Generation
+- The `rl.ipynb` uses OpenAI Gym and DQN alogrithm to generate frames and actions, that are then used for VAE to generate latents.
+- The latents are then used in UNet for the rest
 
 ## Features
 
