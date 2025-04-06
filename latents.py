@@ -7,9 +7,8 @@ class Variational_Encoder_Mario:
         
         if device is None:
             self.device = "cuda" if torch.cuda.is_available() else "cpu"
-        
         torch.cuda.empty_cache()
-        self.model = AutoencoderKL.from_pretrained(model_path).to(self.device)
+        self.model = AutoencoderKL.from_pretrained(model_path, torch_dtype=torch.float32).to(self.device)
 
     @staticmethod
     def process_images(images, reverse=False):
@@ -40,7 +39,7 @@ class Variational_Encoder_Mario:
         images = self.model.decode(latents).sample
         if for_display:
             images = self.process_images(images, reverse=True)
-            if self.device is not "cpu":
+            if self.device != "cpu":
                 images = images.cpu()
         
         return images
